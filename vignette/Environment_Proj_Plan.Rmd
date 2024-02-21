@@ -1,0 +1,188 @@
+---
+title: Environment Project Plan
+author: Naomi Carrigg and Marjorie Tidwell
+date: October 28, 2023
+output: 
+  html_document:
+    theme: cerulean
+    embedded-resources: true
+---
+
+  
+###  Admin:
+- App Title: DC Air Quality
+- Group members: Naomi Carrigg (413) and Marjorie Tidwell (613)  
+
+<br>
+
+###  Topic and Data:
+
+**Context of the Problem:** Similarly to most major American metropolitan cities, the problem of environmental pollution in the District of Columbia is a serious environmental issue. As a busy city, DC has many different sources of pollution, including cars, factories, and power plants, all of which particularly affect air quality which can be seriously harmful to citizens of the district. For DC in particular, the large number of workers commuting into the city in cars, causes increases in traffic and thus air pollution. All these factors together mean that the pollution from emissions affect the air in and around the city. Understanding the source and quantity of pollution from different factors can help to identify ways in which the air in DC and environment can be improved. 
+
+**Literature Review Key Takeaways:**
+
+Ambient Air Quality Trends Report 1996-2019. Department of Energy and Environment for the District of Columbia, 2020.
+
+- Emissions and pollution have improved over the last 20 years
+- Main sources of pollution include transportation emissions and pollution from other southern states
+- DC is in compliance with National Ambient Air Quality Standard for particulate matter, carbon monoxide, sulfur dioxide, nitrogen dioxide, and lead
+- Ozone levels are above the standard
+
+Calma, Emilia. “The Geography of Environmental Toxins in the District of Columbia.” D.C. Policy Center, 15 October 2020, https://www.dcpolicycenter.org/publications/environmental-toxins/. Accessed 30 October 2023.
+
+- The most common air pollutants are ozone and particulate matter
+- Ward 1 has the highest ozone levels and Ward 7 has the highest particulate matter levels
+- DC's child and health asthma rates are higher than the national average with Black children having asthma rates around four times higher than white children.
+- Air quality is worsened by urban heat islands
+
+Castillo, Maria, et al. “Estimating Intra-Urban Inequities in PM2.5-Attributable Health Impacts: A Case Study for Washington, DC.” GeoHealth, vol. 5, no. 11, 2021. AGU, https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2021GH000431. Accessed 30 October 2023.
+
+- Although air quality has improved over the last few decades, health impacts from PM2.5 (particulate matter) are very unequal in DC
+- Southeast region is most at risk for illnesses caused by air pollution including asthma, cardiovascular issues, stroke
+- Look at five neighborhood level factors to analyze the inequtiy: education, unemployment, income, race and ethnicity, life expectancy at birth
+
+
+**Proposed Data Sources:**
+
+Emissions Inventory       https://opendata.dc.gov/datasets/DCGIS/emissions-inventory/explore  
+
+  * data published March of 2022 and most recently updated April of 2023  
+  
+  * 20 Variables  
+  
+  * 52,695 observations 
+  
+  * estimate of air emissions in DC
+  
+  * emissions include critera pollutants, criteria precursors, and hazardous air pollutants
+  
+Air Quality History      ** https://opendata.dc.gov/datasets/515f2c8ff3534302a34bf47f6902ac0d_77/explore
+
+  * data published December of 2021 and most recently updated August of 2022
+  
+  * 20 Variables
+  
+  * 555,859 observations
+  
+  * seasonal and diurnal pattern of pollutants in DC
+
+license: "CC BY"
+
+
+###  Use Case:
+
+
+**Description:** Our Shiny app could be used to aide in local/city policy decisions.
+The actor would be someone who is writing environmental policy for the DC government or an environmental advocate looking for quantitative evidence for air pollution in the city. A shiny app could make understanding this data much more efficient and manageable.
+
+**Actor Questions of Interest:** 
+  * What sources are producing the greatest amount of emissions?
+  
+  * Is there one pollutant that is the most prevalent and what is causing it?
+  
+  * How have emissions changed over the last 10 years?
+  
+  * Which pollutants are contributing the most to poor air quality?  
+  
+
+**Anticipated Workflow for the Actor:**  A basic workflow for the actor would be choosing a explanatory 
+variable(s) and a response variable of interest. Then select which tests to be performed and graphs to be 
+displayed. The graphs can be modified based on user needs, for example faceted by different factors. The actor
+should be able to transform axis to different scales as needed. In addition, where appropriate, the user can 
+opt to add one or more different smoothing methods to the plots displayed. Plus, a statistical analysis could be performed upon request from the user to see the significance between variables.
+
+
+### **Ethical Review**
+
+### Data Collection:
+- **Ethical Consideration:** Ensure transparent data collection without infringing on privacy.
+- **Open Data DC:** They specify that the data collected is DOEE certified and comes from one of 5
+air quality monitoring facilities in DC.
+
+### Accuracy and Integrity:
+- **Ethical Consideration:** Maintain data accuracy to avoid misleading those who access and use the data.
+- **Open Data DC:** The data is updated annually and as needed. The emissions data is supplemented by US EPA data 
+however.
+
+### Accessibility:
+- **Ethical Consideration:** Ensure the data set is accessible to others and that results can be reproduced.
+- **Open Data DC:** The data set is publicly available and can be accessed using an API token.
+
+### Privacy:
+- **Ethical Consideration:** Handle personal or sensitive information with confidentiality.
+- **Open Data DC:** There is no personal or sensitive information in either of these data sets.
+
+### Bias and Fairness:
+- **Ethical Consideration:** Identify and address biases, ensuring fair representation.
+- **Open Data DC:** From the initial view of the data, the emissions and air quality data are collected all over the city
+and not just in specific neighborhoods.
+
+
+
+### App Concept:
+
+**General Layout:** The general layout will have a sidebar panel with all of the options that the user needs to manipulate
+the data given to meet their needs. Then in the content panel the visualizations and tables created will be displayed. There
+will either be a downloadable pdf with the description of the data and or some static text describing the variables and data.  
+
+**Planned options for data selection and manipulation:** Users will be able to select one or more explanatory variables and a single response variable. Categorical variables will be transformed into factors therefore users will be able to select those variables. There will possibly be an option to log transform the y axis if there is only one explanatory variable selected or for the response variable.  
+
+**Planned options for exploratory numerical/graphical analysis:** There will be summary statistics provided for the selected variables if the user wants them. If it is a categorical variable, a probability table can be provided. Categorical variables will likely be displayed using bar graphs and numerical variables using either boxplots or histogram, depending on the distribution and number of explanatory variables. For a linear/multiple linear regression it will be a dot plot with the OLS fitted line. There will also be a graph of residuals provided in conjunction with evaluations on whether or not an outlier is influential using things like dffits and cooks distance plots.
+
+
+**Planned tests and statistical models** There will be options for simple linear regression and multiple linear regression. The model used will be based on the users selection of variables. Based on the model chosen different tests can be performed. For simple linear regression a T-test for slope and an ANOVA test can be performed. For multiple linear regression VIF values will be calculated to check for multicollinearity, a Durbin Watson test to test for independence, a plot of standardized vs. predicted residuals to test for heteroskedasticity, and finally a qq-plot of residuals to test for normality. We can also perform an F-test to assess model fit.  
+
+
+<rb>
+
+### Collaboration:
+
+**Responsibilities:**
+  
+  * Naomi
+    + Business logic for simple linear regression
+    + UI for simple linear regression
+    + Server for simple linear regression
+    + Static context for data set or pdf document with context
+    + Tests for simple linear regression
+    
+  * Margie
+    + Business logic for multiple linear regression
+    + UI for multiple linear regression
+    + Server for multiple linear regression
+    + Tests for multiple linear regression
+    + Residual plots 
+    + Potentially logistic regression if time allows
+    + Tests for multicollinearity including VIF  
+    
+    
+**Teamwork Approach**
+We will communicate over text and in person. Each group member will conduct their work on their own branch and not merge to main unless they have discussed it with the other members of the group.  
+
+
+
+**Schedule:**
+
+November 7: Peer Review should be conducted  
+
+November 9: Peer Review is written up and turned in  
+
+November 14: Check in on Progress Report  
+
+November 17: Progress Report is written up and turned in
+
+November 22: Business Logic is done
+
+November 30: UI is done
+
+December 4: Server is done
+
+December 9: Check in an make refinements to app and show drafted Vignette  
+
+December 11: Finalize vignette and practice demonstration  
+
+December 13: Practice presentation in front of friends
+
+
+
+
