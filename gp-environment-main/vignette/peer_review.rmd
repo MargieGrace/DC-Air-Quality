@@ -1,0 +1,37 @@
+---
+title: USAID Group Peer Review
+author: Naomi Carrigg and Marjorie Tidwell
+date: November 9, 2023
+output: 
+  html_document:
+    theme: cerulean
+    embedded-resources: true
+---
+
+# Introduction
+Naomi Carrigg and Marjorie Tidwell have conducted a peer review of the USAID project group, completed on 11/09/23.
+
+# Summary
+
+### Strengths: 
+- The idea of using a map is very creative and is a good idea for data visualization.
+- Using an API to have updated data is a great idea.
+- The questions proposed make sense for the given concept of addressing questions of USAID distribution among countries.
+
+### Gaps: 
+- Once a country is selected on the map, how will the graphs and stats be presented? Will the user have to select another tab to view that data or will the map somehow be linked to all of the data?
+- What exactly is involved in the breakdown of aid data for each country?
+
+# Recommendations
+
+- Potentially have a tab for each continent. If you go in the direction of creating and interactive map
+a world map may be too overwhelming for the user. It makes more sense to have the maps split up by continent
+and the user can better see which country they are trying to select.  
+
+- It would be very helpful if the user to be able to filter by year. Since the app is
+intended for academics and NGO professionals, they would most likely be interested in seeing
+how the data changes from year to year.  
+
+- Maybe provide a data summary for the country when it is selected. This would be useful to be able
+to quickly click on a country and have a data summary pop up.
+

@@ -1,0 +1,68 @@
+---
+title: Areas of Contribution
+author: Naomi Carrigg and Marjorie Tidwell
+date: December 9, 2023
+output: 
+  html_document:
+    theme: cerulean
+    embedded-resources: true
+---
+
+# Project Plan
+* Naomi
+  + admin
+  + context of problem
+  + literature review
+  + proposed data
+  
+* Marjorie 
+ + use cases
+ + anticipated workflow
+ + use cases
+ + ethical review
+ + app concept
+ + collaboration
+ + schedule
+
+# Cleaning and Tidying Data
+* Naomi
+  + Pivoted the data
+
+* Marjorie
+  + For original idea of mapping using census data: pulled census data; tidied the data to include each site in relation to its geometric position in DC
+  + Mutated air quality data to be tidy
+  + Tidied data specifically for multiple regression
+  + Made sure that the data was appropriate for multiple regression
+
+
+# Code for App
+* Naomi
+  + UI input code for side panel, title and header, linear model, graphing analyses
+  + server code for linear model, summary stats, and plots
+  + Wrote overarching context for app user
+
+
+* Marjorie
+  + UI for multiple linear regression
+  + server code for multiple linear regression
+  + UI for Hypothesis Testing
+  + Server code for Hypothesis Testing
+  + aided in UI for additional Plotting
+  + aided in server code for additional plotting
+
+# Documentation
+* Naomi
+  + README.md made
+  
+* Marjorie
+  + Reviewed README.md
+  + Edited Contributions
+  + Vignette made
+
+
+
+
+
+
+
+
